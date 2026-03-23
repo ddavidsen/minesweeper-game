@@ -7,16 +7,22 @@
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Water Quest</h1>
-    <p class="game-instructions">Collect 20 items to complete the game!</p>
-    <div class="stats">
-      <p>Cans Collected: <span id="current-cans">0</span></p>
-      <p>Time Left: <span id="timer">30</span>s</p>
+  <div id = "start-screen" class = "start-screen">
+    <h1>Charity: Water Minesweeper</h1>
+    <p class = "game-instructions">The water is divided into cells, with contaminants randomly distributed. To win, you need to open all the cells. The number on a cell shows the number of contaminants adjacent to it. Using this information, you can determine cells that are safe, and cells that are not. Cells suspected of being contaminants can be marked with a flag using the right mouse button.</p>
+    <div class = "streak">
+      <p>Streak: <span id = "streak_num">0</span></p>
     </div>
-    <div id="achievements" class="achievement"></div>
-    <div class="game-grid"></div>
-    <button id="start-game">Start Game</button>
+    <button id = "start-game">Start Game</button>
+  </div>
+  <div id = "game-screen" class = "game-screen" style = "display: none;">
+    <div class = "game-grid"></div>
+    <button id = "restart-game">Restart Game</button>
+  </div>
+  <div id = "end-screen" class = "end-screen" style = "display: none;">
+    <h2 id = "end-message"></h2>
+    <p>Time elapsed: <span id = "final_time"> 0 </span> </p>
+    <button id = "play-again"> Play Again </button>
   </div>
   <script src="script.js"></script>
 </body>

@@ -30,7 +30,7 @@ body {
   color: #333;
 }
 
-.container {
+.start-screen, .game-screen, .end-screen {
   max-width: 750px;
   margin: 50px auto;
   background-color: #fff;
@@ -59,25 +59,9 @@ h1 img {
   text-align: center;
 }
 
-.stats {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 30px;
-  background-color: #f5f5f5;
-  padding: 15px 0;
-  border-radius: 8px;
-}
-
-.stats p {
-  margin: 0;
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-}
-
 .game-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(10, 1fr);
   gap: 15px;
   margin: 0 auto;
   max-width: 500px;
@@ -96,39 +80,6 @@ h1 img {
   overflow: hidden;
 }
 
-.water-can-wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 70px;
-  height: 70px;
-  /* Ensure the wrapper is properly centered */
-}
-
-.water-can {
-  width: 100%;
-  height: 100%;
-  background-image: url('img/water-can.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  cursor: pointer;
-  border-radius: 50%;
-  animation: popUp 0.5s cubic-bezier(0.17, 0.67, 0.34, 2);
-  transform-origin: center; /* Ensure scaling happens from the center */
-}
-
-@keyframes popUp {
-  0% {
-    transform: scale(0.5); /* Start scaling from the center */
-  }
-  100% {
-    transform: scale(1); /* End scaling at full size */
-  }
-}
-
-
 button {
   background-color: #4CAF50;
   color: white;
@@ -140,4 +91,8 @@ button {
   display: block;
   margin: 30px auto 0;
   transition: background-color 0.2s;
+}
+
+.hidden {
+  display: none;
 }
