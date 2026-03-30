@@ -30,6 +30,10 @@ body {
   color: #333;
 }
 
+p, div, span, button, a, li {
+  font-family: "Avenir", Arial, sans-serif;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: "Proxima Nova", "Avenir", Arial, sans-serif;
 }
@@ -41,6 +45,13 @@ h1, h2, h3, h4, h5, h6 {
   padding: 40px;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.start-logo {
+  display: block;
+  width: min(320px, 80%);
+  height: auto;
+  margin: 0 auto 18px;
 }
 
 h1 {
@@ -61,6 +72,51 @@ h1 img {
   font-size: 18px;
   margin-bottom: 30px;
   text-align: center;
+}
+
+.difficulty-label {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+
+.difficulty-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.difficulty-buttons button {
+  margin: 0;
+  min-width: 120px;
+}
+
+.end-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.end-buttons button {
+  margin: 0;
+}
+
+.screen-footer {
+  margin-top: 22px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.screen-footer a {
+  color: #2e9df7;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.screen-footer a:hover {
+  text-decoration: underline;
 }
 
 .game-grid {
@@ -84,6 +140,14 @@ h1 img {
   overflow: hidden;
 }
 
+.grid-cell.revealed {
+  background-color: #8bd1cb;
+}
+
+.grid-cell.flagged {
+  background-color: #ff902a;
+}
+
 button {
   background-color: #4fcb53;
   color: white;
@@ -99,4 +163,45 @@ button {
 
 .hidden {
   display: none;
+}
+
+@media (max-width: 900px) {
+  body {
+    padding: 18px;
+  }
+
+  .start-screen, .game-screen, .end-screen {
+    margin: 24px auto;
+    padding: 24px;
+  }
+
+  .game-grid {
+    max-width: 460px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .start-screen, .game-screen, .end-screen {
+    margin: 12px auto;
+    padding: 14px;
+    border-radius: 8px;
+  }
+
+  .game-grid {
+    max-width: 100%;
+  }
+
+  .game-instructions {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .screen-footer {
+    margin-top: 18px;
+    font-size: 13px;
+  }
 }
