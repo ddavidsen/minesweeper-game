@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Water Quest</title>
+  <title>Watersweeper</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-  <div id = "start-screen" class = "start-screen">
+  <div id = "start-screen" class = "start-screen" role="main">
     <img src="img/cw_logo_horizontal.png" alt="charity: water logo" class="start-logo">
     <h1>Watersweeper</h1>
     <p class = "game-instructions">The water is divided into cells, with contaminants randomly distributed. To win, you need to open all the cells. The number on a cell shows the number of contaminants adjacent to it. Using this information, you can determine cells that are safe, and cells that are not. Cells suspected of being contaminants can be marked with a flag using the right mouse button.</p>
@@ -22,12 +22,12 @@
       <a href="https://www.charitywater.org/" target="_blank" rel="noopener noreferrer">https://www.charitywater.org/</a>
     </p>
   </div>
-  <div id = "game-screen" class = "game-screen" style = "display: none;">
-    <p>Collected Water: <span id = "revealed-spaces">0</span>/<span id = "total-safe-spaces">90</span></p>
+  <div id = "game-screen" class = "game-screen" style = "display: none;" role="main">
+    <p>💧 Collected Water: <span id = "revealed-spaces">0</span>/<span id = "total-safe-spaces">90</span></p>
     <div class = "game-grid"></div>
     <button id = "restart-game">Restart Game</button>
   </div>
-  <div id = "end-screen" class = "end-screen" style = "display: none;">
+  <div id = "end-screen" class = "end-screen" style = "display: none;" role="main">
     <h2 id = "end-message"></h2>
     <p>Time elapsed: <span id = "final_time"> 0 </span> </p>
     <div class = "end-buttons">
