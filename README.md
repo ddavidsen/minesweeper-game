@@ -1,47 +1,76 @@
-# charity: water – Water Quest Game Starter
+# 💧 Watersweeper
 
-In this game, users tap charity: water’s signature yellow jerry cans as fast as they can to earn points. You’ll be working from a partially built version of the game. Some functionality is already provided, and your job is to complete the rest.
+A browser-based game inspired by *Minesweeper*, reimagined with a water contamination theme. Players must safely uncover clean water cells while avoiding hidden contaminants, using logic and deduction to win.
 
-## What’s Already Done
+This project combines interactive gameplay with a social impact focus, encouraging awareness of global water issues through integration with **charity: water** and **The Global Career Accelerator**.
 
-The starter files already include:
+---
 
-- A **heading and tagline**
-- A **start button**
-- A **game container** displaying a grid
-- A **placeholder timer and score** (not functional yet)
-- A **logo image** from charity: water
-- Working code that:
-  - Starts the game when the start button is clicked  
-  - Makes jerry cans pop up randomly
+## 🎮 Gameplay Overview
 
-## What You Need to Add
+Watersweeper follows classic Minesweeper mechanics:
+- Each cell may contain a hidden contaminant
+- Numbers indicate how many adjacent cells contain contaminants
+- Use logic to reveal all safe cells without triggering a contaminated one
+- Flag suspected contaminants using right-click
 
-Here’s what you're required to implement to bring the game to life:
+---
 
-### Game Functionality
+## ✨ Features
 
-- **Update the score**
-  - +1 point for each can clicked  
+### 🧩 Core Gameplay
+- Grid-based logic game with **dynamic board generation**
+- **Recursive cell revealing** for empty regions
+- **Right-click flagging system** for marking suspected contaminants
+- **Win/Loss detection** based on game state
 
-- **Add a 30-second timer**
-  - When the timer reaches 0, the game ends  
+### ⚙️ Difficulty Levels
+- Easy, Medium, Hard modes with:
+  - Different grid sizes
+  - Varying bomb counts
+  - Adaptive spacing for responsiveness
 
-- **Display a message when the game ends**
-  - If the player scores **20 or more points**, show a **winning** message  
-  - If the player scores **less than 20 points**, show a **"try again"** message  
-  - Create one array of possible winning messages and one array of losing messages  
-  - Depending on whether the user wins or loses, randomly pick and display a message from the appropriate array  
+### ⏱️ Game Tracking
+- Real-time **timer**
+- Tracks **revealed vs total safe cells**
+- Displays final completion time on game end
 
-### Visual Styling
+### 🖥️ UI/UX Design
+- Multi-screen interface:
+  - Start screen (instructions + difficulty selection)
+  - Game screen (interactive grid)
+  - End screen (results + replay options)
+- Responsive design using **CSS Grid + media queries**
+- Visual feedback for:
+  - Revealed cells
+  - Flagged cells
+  - Game states
 
-- **Add charity: water branding**
-  
-  - Use the provided logo  
-  - Use the [charity: water brand guidelines](https://drive.google.com/file/d/1ct4zYRIwHAtxoNQoeaVwWYPdnruSC6sr/view) to stay on-brand with colors and styling
-  - Add styling rules to ensure your game layout adjusts well across different screen sizes
+### 🌍 Social Impact Integration
+- Includes links to **charity: water** to promote awareness and donations
+- Thematic design centered around clean vs contaminated water
 
-These are the minimum requirements, but if you'd like an additional challenge go ahead and give the LevelUps a shot! For example, you could add logic to decrease the user's score if they miss a jerry can. Have fun and make the game your own!
+---
 
-If you have any questions or need any assistance with your code, reach out to the HelpHub or attend a Drop-In Hour. You got this!!
+## 🛠️ Tech Stack
 
+- **HTML5** – Structure and layout  
+- **CSS3** – Styling, responsive design, grid system  
+- **JavaScript (Vanilla)** – Game logic and interactivity  
+
+---
+
+## 🧠 Key Technical Concepts
+
+### 1. Dynamic Grid System
+- Grid is generated programmatically using DOM manipulation
+- Each cell is backed by a structured object:
+```js
+{
+  row,
+  col,
+  isBomb,
+  isRevealed,
+  isFlagged,
+  adjacentBombs
+}
